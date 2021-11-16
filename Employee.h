@@ -35,6 +35,8 @@ public:
 	// Getter to get Employee's name
 	string getName();
 
+
+
 	// Function to give the raise. It takes in a percent in whole numbers 
 	// (ex: 5 for 5%)
 	void giveRaise(int rate);

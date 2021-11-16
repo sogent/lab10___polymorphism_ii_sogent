@@ -45,18 +45,18 @@ string Employee::getName(){
     return name;
 }
 
+
 // Function to give the raise. It takes in a percent in whole numbers
 // (ex: 5 for 5%)
 void Employee::giveRaise(int rate){
     double raiseAmt;
     raiseAmt=static_cast<double>(rate)/100;
-    cout<<raiseAmt<<endl;
     raiseAmt=raiseAmt*payRate;
-    cout<<raiseAmt<<endl;
-    cout<<setprecision(2)<<fixed;
+
+
     payRate=payRate+raiseAmt;
 
-    cout<<payRate<<endl;
+
 
 }
 
