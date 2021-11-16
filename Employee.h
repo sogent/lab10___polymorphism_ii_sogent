@@ -1,6 +1,6 @@
 #pragma once
-// Your name
-// Today's date
+// Sarah Ogent
+// 11/15/2021
 // 
 
 #include <string>
@@ -17,10 +17,11 @@ private:
 	string name;
 	double balance;
 	double payRate;
-	bool employed = true;
+	bool employed;
 public:
+    Employee();
 	// Constructor
-	Employee(int id, string myName);
+    Employee(int id, string myName);
 
 	// Getter to return the employee ID
 	int getEmployeeID();
