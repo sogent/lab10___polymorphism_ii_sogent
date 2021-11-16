@@ -1,0 +1,18 @@
+NEW 101 Jane Jameson
+NEW 156 Sam Samuelson
+NEW 104 Bob Boberson
+NEW 136 Tim Thomason
+RAISE 104 5
+PAY
+NEW 188 Mike Michaelson
+NEW 190 Jason Jasonson
+RAISE 101 5
+RAISE 190 5
+PAY
+PAY
+RAISE 101 5
+PAY
+PAY
+FIRE 188
+PAY
+PAY
