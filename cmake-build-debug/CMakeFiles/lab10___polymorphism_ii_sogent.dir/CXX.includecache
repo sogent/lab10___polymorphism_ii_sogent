@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sogent/CLionProjects/lab10---polymorphism-ii-sogent/Employee.h
+string
+-
+
+/Users/sogent/CLionProjects/lab10---polymorphism-ii-sogent/Lab11.cpp
+iostream
+-
+Employee.h
+/Users/sogent/CLionProjects/lab10---polymorphism-ii-sogent/Employee.h
+vector
+-
+fstream
+-
+sstream
+-
+

@@ -1,0 +1,3 @@
+/Users/sogent/CLionProjects/lab10---polymorphism-ii-sogent/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/sogent/CLionProjects/lab10---polymorphism-ii-sogent/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/sogent/CLionProjects/lab10---polymorphism-ii-sogent/cmake-build-debug/CMakeFiles/lab10___polymorphism_ii_sogent.dir
