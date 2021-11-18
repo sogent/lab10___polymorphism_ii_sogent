@@ -1,16 +1,16 @@
-Jane Jameson, 101
-$11.025
+Jane Jameson, 101
+$11.03
 $75.10
 
-Sam Samuelson, 156
+Sam Samuelson, 156
 $10.00
 $70.00
 
-Bob Boberson, 104
+Bob Boberson, 104
 $10.50
 $73.50
 
-Tim Thomason, 136
+Tim Thomason, 136
 $10.00
 $70.00
 
@@ -19,7 +19,7 @@ Not employed with the company
 40.00
 0.00
 
-Jason Jasonson, 190
+Jason Jasonson, 190
 $10.50
 $63.00
 

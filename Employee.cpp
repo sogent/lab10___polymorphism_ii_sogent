@@ -11,7 +11,7 @@ using namespace std;
 
 Employee::Employee(){
     employeeID=000;
-    name="";
+   // name="";
     balance=0.00;
     payRate=10.00;
     employed=true;
@@ -41,9 +41,11 @@ double Employee::getBalance(){
 }
 
 // Getter to get Employee's name
+
 string Employee::getName(){
     return name;
 }
+
 
 
 // Function to give the raise. It takes in a percent in whole numbers

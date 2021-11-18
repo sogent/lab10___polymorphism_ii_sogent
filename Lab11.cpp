@@ -47,44 +47,59 @@ int main() {
         firstChar=line.substr(0, 1);
         fileData.clear();
 
-        stringstream inSS(line);
-        while(getline(inSS, line, ' ')){
-            fileData.push_back(line);
-        }
+        //cout<<line<<endl;
 
 
-        if(firstChar=="N"){
+        stringstream inSS;
+        inSS.str(line);
+        string employeeAction;
 
+        inSS>>employeeAction;
+        //cout<<employeeAction;
+        //inSS.flush();
+
+        if(employeeAction=="NEW"){
+
+            cout<<"NEW"<<endl;
             int employeeID;
-            string firstName;
-            string lastName;
-            string employeeName;
-            employeeID=stoi(fileData[1]);
-            firstName=fileData[2];
-            lastName=fileData[3];
+            string employeeFirstName;
+            string employeeLastName;
+            string nextInput;
+            //extracting from string stream
+            inSS>>nextInput;
+            //inserting into output stream
+            //cout<<nextInput<<endl;
+            employeeID=stoi(nextInput);
+            cout<<employeeID<<endl;
+            inSS>>nextInput;
+            employeeFirstName=nextInput;
+            //cout<<employeeFirstName;
+            inSS>>nextInput;
+            employeeLastName=nextInput;
+            //cout<<employeeLastName;
+            //cout<<employeeFirstName<<" "<<employeeLastName<<", ";
+            string employeeName=employeeFirstName+" "+employeeLastName;
+            cout<<employeeName<<endl;
 
-            employeeName=employeeName.append(firstName);
-            employeeName=employeeName.append(" ");
-            employeeName=employeeName.append(lastName);
-            //employeeName=employeeName.append(",");
-            //employeeName=firstName+" "+lastName+", ";
-
-
-            //cout<<employeeID<<endl;
-            //cout<<employeeName<<endl;
             Employee newEmployee(employeeID,employeeName);
             Employees1.push_back(newEmployee);
 
 
-        }else if(firstChar=="R"){
 
+        }
+
+        if(employeeAction=="RAISE"){
+
+            cout<<"RAISE"<<endl;
             int employeeID;
             int employeeRaiseAmt;
-
-            employeeID=stoi(fileData[1]);
-            employeeRaiseAmt=stoi(fileData[2]);
-            //cout<<employeeID<<endl;
-            //cout<<employeeRaiseAmt<<endl;
+            string nextInput;
+            inSS>>nextInput;
+            employeeID=stoi(nextInput);
+            cout<<employeeID<<endl;
+            inSS>>nextInput;
+            employeeRaiseAmt=stoi(nextInput);
+            cout<<employeeRaiseAmt<<endl;
 
             for(int i=0;i<Employees1.size();++i){
                 if(Employees1.at(i).getEmployeeID()==employeeID){
@@ -92,16 +107,21 @@ int main() {
                 }
             }
 
+        }
 
-        }else if(firstChar=="P"){
+        if(employeeAction=="PAY"){
             for(int i=0;i<Employees1.size();++i){
                 Employees1.at(i).pay();
             }
+        }
 
-
-        }else if(firstChar=="F"){
+        if(employeeAction=="FIRE"){
             int employeeID;
-            employeeID=stoi(fileData[1]);
+            string nextInput;
+            inSS>>nextInput;
+            employeeID=stoi(nextInput);
+
+
             for(int i=0;i<Employees1.size();++i){
                 if(Employees1.at(i).getEmployeeID()==employeeID){
                     Employees1.at(i).fire();
@@ -111,6 +131,7 @@ int main() {
         }
 
 
+
     }
     fin.close();
 
@@ -118,18 +139,18 @@ int main() {
 
 
     //Putting output to new file
-    ofstream fout("output.csv");
+    ofstream fout("output.txt");
     for(int i=0;i<Employees1.size();++i){
         if(Employees1.at(i).getEmployeeID()==0) {
             fout << "Not employed with the company" << endl;
             fout << "Not employed with the company"<<endl;
             fout << setprecision(2) << fixed << Employees1.at(i).getBalance()<<endl;
-            fout << Employees1.at(i).getPayRate() << endl;
+            fout << setprecision(2)<<fixed<<Employees1.at(i).getPayRate() << endl;
             fout << endl;
         }else{
             fout<<Employees1.at(i).getName()<<", ";
             fout << Employees1.at(i).getEmployeeID()<<endl;
-            fout <<"$"<< Employees1.at(i).getPayRate()<<endl;
+            fout <<"$"<<setprecision(2)<<fixed<< Employees1.at(i).getPayRate()<<endl;
             fout << "$"<<setprecision(2) << fixed <<Employees1.at(i).getBalance()<<endl;
             fout<<endl;
         }

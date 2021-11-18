@@ -4,6 +4,7 @@
 // 
 
 #include <string>
+#include <vector>
 using namespace std;
 
 #ifndef EMPLOYEE_H
