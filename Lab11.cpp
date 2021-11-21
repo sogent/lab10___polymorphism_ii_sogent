@@ -6,36 +6,6 @@
 using namespace std;
 
 int main() {
-    vector<Employee> Employees;
-    vector<string> fileData;
-    Employee employee1(123, "Adora");
-    Employee employee2(456, "Ollie");
-    //employee1.fire();
-    Employees.push_back(employee1);
-    Employees.push_back(employee2);
-
-
-
-    for(int i=0;i<Employees.size();++i) {
-        if (Employees.at(i).isEmployed()) {
-            cout << Employees.at(i).getName()<<" is employed" << endl;
-        } else {
-            cout << Employees.at(i).getName()<<" is not employed" << endl;
-        }
-    }
-
-    Employees.at(0).giveRaise(5);
-    Employees.at(0).giveRaise(5);
-    /*
-
-    for(int i=0;i<Employees.size();++i) {
-        cout << Employees.at(i).getName()<<", ";
-        cout << Employees.at(i).getEmployeeID()<< endl;
-        cout << Employees.at(i).getPayRate()<< endl;
-
-    }
-     */
-
 
     ifstream fin("/Users/sogent/CLionProjects/lab10---polymorphism-ii-sogent/input.txt");
     string line;
@@ -43,11 +13,6 @@ int main() {
 
 
     while(getline(fin, line)) {
-        string firstChar;
-        firstChar=line.substr(0, 1);
-        fileData.clear();
-
-        //cout<<line<<endl;
 
 
         stringstream inSS;
@@ -55,8 +20,6 @@ int main() {
         string employeeAction;
 
         inSS>>employeeAction;
-        //cout<<employeeAction;
-        //inSS.flush();
 
         if(employeeAction=="NEW"){
 
@@ -68,16 +31,14 @@ int main() {
             //extracting from string stream
             inSS>>nextInput;
             //inserting into output stream
-            //cout<<nextInput<<endl;
             employeeID=stoi(nextInput);
             cout<<employeeID<<endl;
             inSS>>nextInput;
             employeeFirstName=nextInput;
-            //cout<<employeeFirstName;
+
             inSS>>nextInput;
             employeeLastName=nextInput;
-            //cout<<employeeLastName;
-            //cout<<employeeFirstName<<" "<<employeeLastName<<", ";
+
             string employeeName=employeeFirstName+" "+employeeLastName;
             cout<<employeeName<<endl;
 
@@ -143,13 +104,14 @@ int main() {
     for(int i=0;i<Employees1.size();++i){
         if(Employees1.at(i).getEmployeeID()==0) {
             fout << "Not employed with the company" << endl;
-            fout << "Not employed with the company"<<endl;
-            fout << setprecision(2) << fixed << Employees1.at(i).getBalance()<<endl;
-            fout << setprecision(2)<<fixed<<Employees1.at(i).getPayRate() << endl;
+            fout<<Employees1.at(i).getName()<<", ";
+            fout << Employees1.at(i).getEmployeeID()<<": "<<endl;
+            fout << "$"<<setprecision(2) << fixed << Employees1.at(i).getBalance()<<endl;
+            fout << "$"<<setprecision(2)<<fixed<<Employees1.at(i).getPayRate() << endl;
             fout << endl;
         }else{
             fout<<Employees1.at(i).getName()<<", ";
-            fout << Employees1.at(i).getEmployeeID()<<endl;
+            fout << Employees1.at(i).getEmployeeID()<<": "<<endl;
             fout <<"$"<<setprecision(2)<<fixed<< Employees1.at(i).getPayRate()<<endl;
             fout << "$"<<setprecision(2) << fixed <<Employees1.at(i).getBalance()<<endl;
             fout<<endl;
